@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110f">
+  <title>Madras Saloon | Book a visit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline">Open daily · 9:00 AM – 8:00 PM</div>
+  <header>
+    <a class="brand" href="#top" aria-label="Madras Saloon home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">MADRAS SALOON</span>
+    </a>
+    <span class="header-note">A good cut, at your time.</span>
+  </header>
+
+  <main id="top">
+    <div class="booking-layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Your neighbourhood chair</p>
+        <h1 id="page-title">Make time for a fresh cut.</h1>
+        <p class="intro-copy">Choose your service, pick a time that works, and we’ll have your chair ready. Booking takes less than a minute.</p>
+        <div class="shop-photo" role="img" aria-label="A welcoming barbershop interior">
+          <div class="photo-caption">
+            <strong>Come in. Settle in.</strong>
+            <span>Madras Saloon</span>
+          </div>
+        </div>
+        <div class="hours">
+          <span class="hours-icon" aria-hidden="true">◷</span>
+          <span><b>Here for you, every day</b><br>Bookings available 9:00 AM – 8:00 PM</span>
+        </div>
+      </section>
+
+      <section class="booking-panel" aria-labelledby="booking-title">
+        <div class="panel-head">
+          <h2 id="booking-title">Book your visit</h2>
+          <span class="step-note">No account needed</span>
+        </div>
+        <form id="booking-form">
+          <div class="section">
+            <h3 class="section-title"><span class="step-number">1</span> Choose a service</h3>
+            <div class="service-list">
+              <label class="service-option">
+                <input type="radio" name="service" value="Haircut" data-price="120" checked>
+                <span><span class="service-name">Haircut</span></span>
+                <span class="service-price">₹120</span>
+              </label>
+              <label class="service-option">
+                <input type="radio" name="service" value="Shaving / Beard" data-price="70">
+                <span><span class="service-name">Shaving / Beard</span></span>
+                <span class="service-price">₹70</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title"><span class="step-number">2</span> Pick a date</h3>
+            <input class="date-control" id="booking-date" name="date" type="date" required aria-label="Choose an appointment date">
+          </div>
+
+          <div class="section">
+            <h3 class="section-title"><span class="step-number">3</span> Choose a time</h3>
+            <div class="time-grid" id="time-grid" aria-label="Available appointment times"></div>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title"><span class="step-number">4</span> Your details</h3>
+            <div class="customer-fields">
+              <input class="customer-input" name="customer" type="text" placeholder="Your name" autocomplete="name" required maxlength="60">
+              <input class="customer-input" name="phone" type="tel" placeholder="Phone number" autocomplete="tel" required maxlength="16" pattern="\+?[0-9]{7,15}" title="Enter a valid phone number">
+            </div>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title"><span class="step-number">5</span> Demo payment</h3>
+            <div class="demo-payment" aria-label="Simulated test card payment">
+              <div class="demo-payment-top">
+                <span>TEST CHECKOUT</span>
+                <span class="demo-payment-badge">NO REAL CHARGE</span>
+              </div>
+              <p class="demo-card-number">•••• &nbsp;•••• &nbsp;•••• &nbsp;4242</p>
+              <div class="demo-payment-bottom">
+                <span>Demo card</span>
+                <strong>VISA</strong>
+              </div>
+            </div>
+            <p class="payment-note">This is a payment simulation. No real money or card details are used.</p>
+          </div>
+
+          <div class="summary" aria-live="polite">
+            <span id="summary-detail">Haircut</span>
+            <strong id="summary-price">₹120</strong>
+          </div>
+          <button class="book-button" id="book-button" type="submit"><span id="pay-button-label">Pay ₹120 · demo</span><span aria-hidden="true">→</span></button>
+          <p class="payment-status" id="payment-status" role="status" aria-live="polite" hidden></p>
+          <p class="privacy-note">Your booking is saved in this browser. No sign-in required.</p>
+          <div class="confirmation" id="confirmation" role="status" aria-live="polite"></div>
+          <section class="ticket" id="ticket" aria-label="Your appointment ticket" hidden>
+            <div class="ticket-qr" id="ticket-qr" role="img" aria-label="QR code for your appointment ticket"></div>
+            <div class="ticket-copy">
+              <p class="ticket-kicker">Appointment confirmed</p>
+              <h3>Your visit ticket</h3>
+              <p class="ticket-reference" id="ticket-reference"></p>
+              <p class="ticket-details" id="ticket-details"></p>
+              <a class="whatsapp-link" id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">Message the salon on WhatsApp</a>
+              <p class="whatsapp-note">WhatsApp opens with your booking details ready. Tap Send to notify the salon.</p>
+            </div>
+          </section>
+          <p class="payment-status" id="owner-email-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>Madras Saloon</strong>
+    <span>Appointments available every day · 9:00 AM – 8:00 PM</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
